@@ -33,6 +33,7 @@ public class ProduitBean implements Serializable{
     // GETTERS SETTERS
     
     
+    
         //METHODE
 //+++++++++++++++++++++++       AJOUTER         +++++++++++++++++++++++++++++
         public void ajouterProduitNonPerissable(ProduitNonPerissable pnp) {
@@ -41,7 +42,43 @@ public class ProduitBean implements Serializable{
             produitNonPerissable = new ProduitNonPerissable();
         }
         
-        public void ajouterProduitPerissable(ProduitPerissable pp) {
+        public IMagasinLocal getService() {
+			return service;
+		}
+
+		public void setService(IMagasinLocal service) {
+			this.service = service;
+		}
+
+		public ProduitNonPerissable getProduitNonPerissable() {
+			return produitNonPerissable;
+		}
+
+		public void setProduitNonPerissable(ProduitNonPerissable produitNonPerissable) {
+			this.produitNonPerissable = produitNonPerissable;
+		}
+
+		public ProduitPerissable getProduitPerissable() {
+			return produitPerissable;
+		}
+
+		public void setProduitPerissable(ProduitPerissable produitPerissable) {
+			this.produitPerissable = produitPerissable;
+		}
+
+		public List<Produit> getProduit() {
+			return produit;
+		}
+
+		public void setProduit(List<Produit> produit) {
+			this.produit = produit;
+		}
+
+		public static long getSerialversionuid() {
+			return serialVersionUID;
+		}
+
+		public void ajouterProduitPerissable(ProduitPerissable pp) {
             // TODO Auto-generated method stub
             service.ajouterProduitPerissable(pp);
             produitPerissable = new ProduitPerissable();

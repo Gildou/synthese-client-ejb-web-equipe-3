@@ -36,7 +36,35 @@ public class MagasinBean implements Serializable {
         magasin = new Magasin();
     }
 
-//+++++++++++++++++++++++       SUPPRIMER           +++++++++++++++++++++++++++++
+public IMagasinLocal getService() {
+		return service;
+	}
+
+	public void setService(IMagasinLocal service) {
+		this.service = service;
+	}
+
+	public Magasin getMagasin() {
+		return magasin;
+	}
+
+	public void setMagasin(Magasin magasin) {
+		this.magasin = magasin;
+	}
+
+	public List<Magasin> getMagasins() {
+		return magasins;
+	}
+
+	public void setMagasins(List<Magasin> magasins) {
+		this.magasins = magasins;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	//+++++++++++++++++++++++       SUPPRIMER           +++++++++++++++++++++++++++++
     public void supprimerMagasin(Magasin m) {
         // TODO Auto-generated method stub
         service.supprimerMagasin(m);

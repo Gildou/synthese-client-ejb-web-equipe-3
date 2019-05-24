@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>AjouterProduitMagasin</title>
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+</h:head>
+<body>
+
+	<div class="container">
+		<h1>AjouterProduitMagasin</h1>
+		<h:form>
+			<h:panelGrid columns="2" cellpadding="5">
+				<f:validateBean>
+					<h:outputLabel value="Magasin" />
+					<h:selectOneMenu value="#{magasinBean.magasin.idMagasin}">
+						<f:selectItem itemValue="0" itemLabel="Choisir un magasin" />
+						<f:selectItems value="#{produitBean.getMagasins()}" var="m"
+							itemValue="#{m.idMagasin}"
+							itemLabel="[#{m.idMagasin}] #{m.nomMagasin} #{m.codeMagasin}, #{m.prixDuLocal}" />
+					</h:selectOneMenu>
+					
+					<h:outputLabel value="Produit" />
+					<h:selectOneMenu value="#{produitBean.Produit.idProduit}">
+						<f:selectItem itemValue="0" itemLabel="Choisir un produit" />
+						<f:selectItems value="#{produitBean.listerLotissements()}"
+							var="p" itemValue="#{p.idProduit}"
+							itemLabel="#{p.nomProduit},#{p.stock},#{p.prix}" />
+					</h:selectOneMenu>
+				</f:validateBean>
+			</h:panelGrid>
+			<h:commandButton action="#{produitBean.ajouterProduit}"
+				value="Ajouter" />
+
+			
+		</h:form>
+	</div>
+</body>
+</html>
